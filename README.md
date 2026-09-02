@@ -34,3 +34,14 @@ Sauce Demo is a public demo website, so anyone can clone the repo and run the te
 npm install
 npx playwright test
 npx playwright show-report
+
+---
+
+## Environment variables
+
+This project uses a local `.env` file for credentials.
+
+Copy the example file:
+
+```bash
+cp .env.example .env
