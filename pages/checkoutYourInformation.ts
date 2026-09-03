@@ -10,16 +10,16 @@ export class CheckoutPage {
     await this.page.fill('#postal-code', data?.postalCode || faker.location.zipCode());
   }
 
-  async fillInFirstName(data: { firstName: string }) {
-    await this.page.fill('#first-name', faker.person.firstName());
+  async fillInFirstName(data?: { firstName?: string }) {
+    await this.page.fill('#first-name', data?.firstName || faker.person.firstName());
   }
 
-  async fillInLastName(data: { lastName: string }) {
-    await this.page.fill('#last-name', faker.person.lastName());
+  async fillInLastName(data?: { lastName?: string }) {
+    await this.page.fill('#last-name', data?.lastName || faker.person.lastName());
   }
 
-  async fillInPostalCode(data: { postalCode: string }) {
-    await this.page.fill('#postal-code', faker.location.zipCode());
+  async fillInPostalCode(data?: { postalCode?: string }) {
+    await this.page.fill('#postal-code', data?.postalCode || faker.location.zipCode());
   }
 
   async clickContinue() {
@@ -30,4 +30,7 @@ export class CheckoutPage {
     await this.page.click('#cancel');
   }
 
+  async getErrorMessage() {
+    return await this.page.textContent('[data-test="error"]');
+  }
 }
