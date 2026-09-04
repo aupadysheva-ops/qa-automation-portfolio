@@ -34,8 +34,16 @@ Sauce Demo is a public demo website, so anyone can clone the repo and run the te
 npm install
 npx playwright test
 npx playwright show-report
+```
 
 ---
+
+## Test status
+
+![Playwright Tests](https://github.com/aupadysheva-ops/qa-automation-portfolio/actions/workflows/playwright.yml/badge.svg)
+
+Latest run: all tests passed  
+Report available in GitHub Actions → Artifacts → `playwright-report`
 
 ## Environment variables
 
@@ -45,3 +53,4 @@ Copy the example file:
 
 ```bash
 cp .env.example .env
+```
