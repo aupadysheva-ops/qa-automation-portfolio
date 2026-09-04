@@ -9,6 +9,5 @@ test('User can open cart', async ({ loggedInPage: page}) => {
 
 cartWithItemsTest('Remove item from cart', async ({ cartWithItems }) => {
     await cartWithItems.removeFromCart('sauce-labs-backpack');
-    const itemsCount = await cartWithItems.getCartItemsCount();
-    await expect(itemsCount).toBe(1);
+    await expect(cartWithItems.page.locator('.cart_item')).toHaveCount(1);
 });

@@ -1,7 +1,7 @@
 import { Page } from '@playwright/test'
 
 export class CartPage {
-  constructor(private page: Page) {}
+  constructor(public page: Page) {}
 
   async continueShopping() {
     await this.page.click('#continue-shopping');
