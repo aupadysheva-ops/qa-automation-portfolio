@@ -1,6 +1,7 @@
 import { test } from './fixtures';
 import { CatalogPage } from '../pages/catalog';
 import { CartPage } from '../pages/cart';
+import {products} from '../data/products';
 
 type CartWithItemsFixtures = {
   cartWithItems: CartPage;
@@ -11,8 +12,8 @@ cartWithItems: async ({ loggedInPage: page }, use) => {
   const catalog = new CatalogPage(page);
   const cart = new CartPage(page);
   
-  await catalog.addToCart('sauce-labs-backpack');
-  await catalog.addToCart('sauce-labs-bolt-t-shirt');
+  await catalog.addToCart(products.backpack);
+  await catalog.addToCart(products.boltTShirt);
   
   await catalog.goToCart();
   await page.waitForURL('**/cart.html');

@@ -1,8 +1,9 @@
 import { test } from '../../fixtures/fixtures';
 import { expect } from '@playwright/test';
+import { products } from '../../data/products';
 
 test('First name is required', async ({e2eFlow: e2e}) => {
-    await e2e.catalog.addToCart('sauce-labs-backpack');
+    await e2e.catalog.addToCart(products.backpack);
     await e2e.catalog.goToCart();
     await e2e.cart.clickCheckout();
     await e2e.checkout.fillInLastName();
@@ -13,7 +14,7 @@ test('First name is required', async ({e2eFlow: e2e}) => {
     });
 
     test('Last name is required', async ({e2eFlow: e2e}) => {
-    await e2e.catalog.addToCart('sauce-labs-backpack');
+    await e2e.catalog.addToCart(products.backpack);
     await e2e.catalog.goToCart();
     await e2e.cart.clickCheckout();
     await e2e.checkout.fillInFirstName();
@@ -24,7 +25,7 @@ test('First name is required', async ({e2eFlow: e2e}) => {
     });
 
     test('Postal code is required', async ({e2eFlow: e2e}) => {
-    await e2e.catalog.addToCart('sauce-labs-backpack');
+    await e2e.catalog.addToCart(products.backpack);
     await e2e.catalog.goToCart();
     await e2e.cart.clickCheckout();
     await e2e.checkout.fillInFirstName();

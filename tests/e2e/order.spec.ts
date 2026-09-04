@@ -1,10 +1,11 @@
 import { test } from '../../fixtures/fixtures';
 import { expect } from '@playwright/test';
+import { products } from '../../data/products';
 //import { customers } from '../../data/users';
 
 
 test('Successful purchase', async ({e2eFlow: e2e}) => {
-    await e2e.catalog.addToCart('sauce-labs-backpack');
+    await e2e.catalog.addToCart(products.backpack);
     await e2e.catalog.goToCart();
     await e2e.cart.clickCheckout();
     await e2e.checkout.fillInAllForm();

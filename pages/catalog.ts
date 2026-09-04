@@ -1,6 +1,6 @@
 import { Page } from '@playwright/test'
 export class CatalogPage {
-  constructor(private page: Page) {}
+  constructor(public page: Page) {}
 
   async addToCart(productName: string) {
     await this.page.click(`#add-to-cart-${productName}`);
